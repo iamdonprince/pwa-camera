@@ -1,38 +1,62 @@
 .App {
   text-align: center;
+  height: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --primary: #2977ff;
+  --gray: #ececec;
+  --whitesmoke: #f5f5f5;
+  --dark: #222;
+  --navbar-height: 70px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#navbar {
+  height: var(--navbar-height);
+  background-color: var(--primary);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  font-size: 22px;
+  font-weight: 550;
+  letter-spacing: 0.9px;
 }
-
-.App-link {
-  color: #61dafb;
+#main {
+  width: 100%;
+  height: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
+#camera-btn {
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 15px;
+  left: calc(50% - 40px);
+  border: 3px solid var(--primary);
+}
+.loading-spinner {
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  animation-name: rotate-forever;
+  animation-timing-function: linear;
+  height: 30px;
+  width: 30px;
+  border: 3px solid var(--primary);
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - var(--navbar-height));
+}
+@keyframes rotate-forever {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
